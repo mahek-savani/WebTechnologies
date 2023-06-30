@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Demo</title>
+        <link rel="stylesheet" href="/static/style.css" type="text/css">
+    </head>
+    <script type="text/javascript" src="/static/fetch.js"></script>
+
+    <body>
+        <div class="container">
+            <div class="form">
+                <div class="header">
+                    <span class="head_text">
+                        Events Search
+                    </span>
+                    <hr>
+                </div>
+                <form class="eventForm" id="eventForm" onsubmit="event.preventDefault();">
+                    <div class="keyword">
+                        <div>
+                            <label for="keyword" class="blue-color">Keyword<span class="mandatory">*</span></label>
+                        </div>
+                        <div class="row1">
+                            <input class="inputbox" type="text" name="keyword" id="keywords" placeholder="" value="" required />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="distance">
+                            <label for="distance" class="blue-color">Distance(miles)</label><br />
+                            <input class="inputbox" type="number" name="distance" id="distance" placeholder="10" value="">
+                        </div>
+                        <div class="category">
+                            <label for="category" class="blue-color">Category<span class="mandatory">*</span></label><br />
+                            <select class="dropdown" name="category" id="category">
+                                <option class="dropdownCat" value="default" selected>Default</option>
+                                <option class="dropdownCat" value="KZFzniwnSyZfZ7v7nJ">Music</option>
+                                <option class="dropdownCat" value="KZFzniwnSyZfZ7v7nE">Sports</option>
+                                <option class="dropdownCat" value="KZFzniwnSyZfZ7v7na">Art & Theatre</option>
+                                <option class="dropdownCat" value="KZFzniwnSyZfZ7v7nn">Film</option>
+                                <option class="dropdownCat" value="KZFzniwnSyZfZ7v7n1">Miscellaneous</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="location">
+                        <div class="row1">
+                            <label for="location" class="blue-color" style="margin-right: 5px;">Location<span class="mandatory">*</span></label>
+                            <input class="inputCheckBox" type="checkbox" name="" id="autoLocate" onclick="autoLocateUser()" !checked><span>Auto-Detect Location</span>
+                        </div>
+                        <div class="row1">
+                            <input class="inputbox" type="text" name="location" id="location" placeholder="" value="" required />
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <input class="searchButton" type="submit" value="SEARCH" id="Search" onclick="searchDetails()">
+                        <input class="clearButton" type="reset" value="CLEAR" onclick="clearForm()">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="noRecord" id="noRecord" style="display: none;">
+            <div id="noRecords" class="border">No Records found</div>
+        </div>
+        <div class="fetchedData" id="fetchedData" style="display: none;">
+            
+            <table id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <td class="date" style="font-weight: bold;">Date</td>
+                        <td class="icon" style="font-weight: bold;">Icon</td>
+                        <th class="event">Event</th>
+                        <th class="genre">Genre</th>
+                        <th class="venueTab">Venue</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"><tr><td>2023-05-13<br>20:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/afe/5b0bb7af-e6f0-41d5-a62e-f12f28f69afe_1711411_ARTIST_PAGE_3_2.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(0, event)">Joji Presents Smithereens Oblivion With Rei Brown + Lil Toe (ammo) + S</a></td><td>Music</td><td>Kia Forum</td></tr><tr><td>2023-08-03<br>19:10:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/2f4/5f8bca36-3127-4f87-b573-3dd6485642f4_1344231_RECOMENDATION_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(1, event)">Los Angeles Dodgers vs. Oakland Athletics</a></td><td>Sports</td><td>Dodger Stadium</td></tr><tr><td>2023-08-01<br>19:10:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/2f4/5f8bca36-3127-4f87-b573-3dd6485642f4_1344231_RECOMENDATION_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(2, event)">Los Angeles Dodgers vs. Oakland Athletics</a></td><td>Sports</td><td>Dodger Stadium</td></tr><tr><td>2023-08-02<br>19:10:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/2f4/5f8bca36-3127-4f87-b573-3dd6485642f4_1344231_RECOMENDATION_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(3, event)">Los Angeles Dodgers vs. Oakland Athletics</a></td><td>Sports</td><td>Dodger Stadium</td></tr><tr><td>2023-03-25<br>22:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/c/df8/81eadad8-4449-412e-a2b1-3d8bbb78edf8_106181_EVENT_DETAIL_PAGE_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(4, event)">Time Machine: 90's-2000's Dance Party</a></td><td>Music</td><td>Exchange LA</td></tr><tr><td>2023-05-05<br>20:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/65f/0f9c7e7f-7d4b-4ee0-94f9-c627a4ec265f_1095221_TABLET_LANDSCAPE_LARGE_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(5, event)">90’s Pop Tour</a></td><td>Music</td><td>YouTube Theater</td></tr><tr><td>2023-07-07<br>20:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/067/a66b4958-b8b8-48b3-92f0-4c5af7080067_68191_TABLET_LANDSCAPE_LARGE_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(6, event)">70's Soul Jam</a></td><td>Music</td><td>YouTube Theater</td></tr><tr><td>2023-03-18<br>18:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/4f3/5a5496fc-68bf-45f7-a166-0743ddca64f3_1687511_RETINA_PORTRAIT_3_2.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(7, event)">Old 97's with Caitlin Rose</a></td><td>Music</td><td>Teragram Ballroom</td></tr><tr><td>2023-05-10<br>19:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/e7b/3195d7dc-5bc7-4b8f-9f16-851620820e7b_RETINA_PORTRAIT_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(8, event)">SUGA | Agust D TOUR IN U.S.</a></td><td>Music</td><td>Kia Forum</td></tr><tr><td>2023-05-11<br>19:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/e7b/3195d7dc-5bc7-4b8f-9f16-851620820e7b_RETINA_PORTRAIT_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(9, event)">SUGA | Agust D TOUR IN U.S.</a></td><td>Music</td><td>Kia Forum</td></tr><tr><td>2023-05-14<br>19:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/e7b/3195d7dc-5bc7-4b8f-9f16-851620820e7b_RETINA_PORTRAIT_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(10, event)">SUGA | Agust D TOUR IN U.S.</a></td><td>Music</td><td>Kia Forum</td></tr><tr><td>2023-09-11<br>19:30:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/0bb/82054d6b-8fa6-4395-a49a-ae90bc4d60bb_RETINA_PORTRAIT_3_2.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(11, event)">Ghost Re-Imperatour U.S.A.</a></td><td>Music</td><td>Kia Forum</td></tr><tr><td>2023-09-12<br>19:30:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/0bb/82054d6b-8fa6-4395-a49a-ae90bc4d60bb_RETINA_PORTRAIT_3_2.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(12, event)">Ghost Re-Imperatour U.S.A.</a></td><td>Music</td><td>Kia Forum</td></tr><tr><td>2023-05-27<br>19:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/c79/5ff8966f-27b4-4281-8c20-f7ba13f37c79_TABLET_LANDSCAPE_LARGE_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(13, event)">TOMORROW X TOGETHER WORLD TOUR 'ACT : SWEET MIRAGE' IN U.S.</a></td><td>Music</td><td>BMO Stadium</td></tr><tr><td>2023-05-28<br>19:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/c79/5ff8966f-27b4-4281-8c20-f7ba13f37c79_TABLET_LANDSCAPE_LARGE_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(14, event)">TOMORROW X TOGETHER WORLD TOUR 'ACT : SWEET MIRAGE' IN U.S.</a></td><td>Music</td><td>BMO Stadium</td></tr><tr><td>2023-03-04<br>20:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/c/060/c5c08e7a-9912-456c-a060-2758be94e060_105881_RECOMENDATION_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(15, event)">S.G. Goodman</a></td><td>Music</td><td>Troubadour</td></tr><tr><td>2023-04-27<br>19:00:00</td><td><img class="icon" src="https://i.ticketweb.com/i/00/11/65/96/99_Edp.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(16, event)">Whitey Morgan &amp; the 78s</a></td><td>Music</td><td>Whisky A Go Go</td></tr><tr><td>2023-03-18<br>14:00:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/c/df8/81eadad8-4449-412e-a2b1-3d8bbb78edf8_106181_EVENT_DETAIL_PAGE_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(17, event)">P.O.S - Deeper Tales Tour</a></td><td>Music</td><td>The Patio at Academy LA</td></tr><tr><td>2023-02-28<br>19:30:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/e/a4e/71a58942-4d25-4ac3-ad3b-bbf7b1a8fa4e_EVENT_DETAIL_PAGE_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(18, event)">Club 90s Presents:  Good Riddance: Gracie Abrams Night</a></td><td>Music</td><td>The Moroccan Lounge</td></tr><tr><td>2023-03-30<br>19:30:00</td><td><img class="icon" src="https://s1.ticketm.net/dam/a/309/01ccefbf-b754-456a-b9f2-0d7dad210309_RECOMENDATION_16_9.jpg"></td><td><a class="eventName" href="#" onclick="eventClicked(19, event)">PaleyFest: Paley Center Membership</a></td><td>Arts &amp; Theatre</td><td>Dolby Theatre</td></tr></tbody>
+            </table>
+            
+            <script>
+                let sortingOrder = {};
+                const getCellValue = (tr, idx) => tr.children[idx].innerText || tr.children[idx].textContent;
+                const comparer = (idx, asc) => (a, b) => {
+                    const v1 = getCellValue(a, idx);
+                    const v2 = getCellValue(b, idx);
+                    const order = sortingOrder[idx] === 'asc' ? 1 : -1;
+                    return v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? order * (v1 - v2) : order * v1.toString().localeCompare(v2);
+                };
+
+                document.querySelectorAll('th').forEach(th => {
+                th.addEventListener('click', () => {
+                    const table = th.closest('table');
+                    const tbody = table.querySelector('tbody');
+                    const thIndex = Array.from(th.parentNode.children).indexOf(th);
+                    
+                    if (sortingOrder[thIndex] === 'asc') {
+                        sortingOrder[thIndex] = 'desc';
+                    } 
+                    else {
+                        sortingOrder[thIndex] = 'asc';
+                    }
+                    
+                    const rows = Array.from(tbody.querySelectorAll('tr'));
+                    rows.sort(comparer(thIndex, sortingOrder[thIndex] === 'asc'));
+                    
+                    rows.forEach(row => tbody.appendChild(row));
+                    });
+                });
+            </script>            
+        </div>
+        <div id="container1"></div>
+    </body>
+</html>

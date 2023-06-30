@@ -1,0 +1,99 @@
+body{
+    font-family: Georgia,Times,Times New Roman,serif; 
+    text-align: center;
+}
+
+.box{
+    width: 475px;
+    height: 92px;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.data{
+    text-align: center;
+}
+
+.name{
+    font-size: 40px;
+}
+
+.links{
+    font-size: 10px;
+    font-style: italic;
+    margin-top: 6px;
+}
+
+.navbar{
+    margin: 3px 33px;
+}
+
+.content{
+    padding: 15px;
+    display: inline-block;
+    grid-template-areas: "a";
+    gap: 5px;
+}
+
+.nature{
+    font-size: 20px;
+    margin-top: 33px;
+    text-align: left;
+}
+
+.images{
+    display: grid;
+    grid-template-areas: "a a";
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
+.main{
+    margin-top: 12px;
+}
+
+.rows img{
+    width: 270px;
+    height: 270px;
+    /* border-radius: 50%; */
+    object-fit: cover;
+}
+
+.links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+  
+.links li {
+    display: inline-block;
+}
+  
+.links li a {
+    display: block;
+    color: gray;
+    /* text-align: center; */
+    padding: 0px 6px;
+    text-decoration: none;
+}
+
+.active {
+    color: #000 !important;
+}
+
+.footer{
+    text-align: center;
+    margin-top: 23px;
+}
+
+.copyright{
+    font-size: 7px;
+    font-style: italic;
+}
+
+.footer img{
+    width: 14px;
+    height: 14px;
+    margin: 17px 5px;
+}

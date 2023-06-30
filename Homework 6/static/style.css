@@ -1,0 +1,443 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url('./background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.form{
+    background-color: rgba(75, 75, 75, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    color: #ccc;
+    /* height: 500px; */
+    width: 50%;
+    border-radius: 15px;
+    padding: 20px 15px;
+}
+
+.eventForm{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+}
+
+.header{
+    text-align: center;
+}
+
+.head_text{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.mandatory{
+    color: red;
+}
+
+.inputbox{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    width: 100%;
+    height: 25px;
+    color: #ccc;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+input[type="checkbox"]{
+    width: 10px;
+    height: 10px;
+}
+
+.dropdown{
+    margin-top: 5px;
+    color: #ccc;
+}
+
+.dropdownCat{
+    height: 10px
+}
+
+.row{
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.row1{
+    display: flex;
+    flex-direction: row;
+}
+
+.location{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.keyword{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px
+}
+
+.blue-color{
+    color: skyblue;
+}
+
+.distance{
+    width: 30%;
+}
+
+.category{
+    width: 50%;
+}
+
+select{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    width: 100%;
+    height: 25px;
+    color: white;
+    padding-left: 5px;
+}
+
+.buttons{
+    margin-top: 30px;
+}
+
+.buttons input{
+    border-radius: 5px;
+    border: 0px;
+    padding: 10px 15px;
+    color: #ccc;
+}
+
+.searchButton{
+    background-color: #fe7700e8;
+    box-shadow: 0px 4px 1px -2.5px #f45701;
+}
+
+.searchButton:hover{
+    background-color: #fc995e;
+}
+
+.clearButton{
+    background-color: #577bb2;
+    box-shadow: 0px 4px 1px -2.5px #3f5883;
+}
+
+.clearButton:hover{
+    background-color: #6988bc;
+}
+
+.noRecord{
+    margin-top: 45px;
+    text-align: center;
+}
+
+#noRecords{
+    background-color: rgb(228, 225, 225); 
+    margin-left: auto; 
+    margin-right: auto;
+    color: red;
+    padding: 10px 0px;
+    width: 75%;
+}
+
+table{
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small !important;
+    width: 80%;
+}
+
+.icon{
+    height: 40px;
+    width: 65px;
+    margin: 10px 25px;
+}
+
+.date{
+    width: 13%;
+}
+
+.iconTab{
+    width: 12%;
+}
+
+.event{
+    width: 50%;
+}
+
+.genre{
+    width: 10%;
+}
+
+.venueTab{
+    width: 15%;
+}
+
+.eventName{
+    text-decoration: none; 
+    color: black
+}
+
+.eventName:hover{
+    color: rgba(82, 37, 197, 0.927);
+}
+
+#dataTable{
+    text-align: center; 
+    margin-top: 50px; 
+    min-width: 1000px;
+    border-radius: 1px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.singleEvent{
+    padding: 25px 25px;
+}
+
+.eventStyle{
+    background-color: rgba(75, 75, 75, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    width: 65%;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 450px;
+}
+
+.row2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title{
+    text-align: center;
+    color: white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+}
+
+.eventDetails{
+    padding-top: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    color: #ccc;
+}
+
+.dataTitle{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-size: medium;
+    font-weight: 300;
+    color: aquamarine;
+}
+
+.textDetails{
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 40%;
+}
+
+.imageDetails{
+    flex-shrink: 0;
+    flex-grow: 0;
+    width: 60%;
+    justify-content: center;
+    display: flex;
+}
+
+.seatMap{
+    max-width: auto;
+    max-height: 350px;
+    display: inline-block;
+}
+
+.onsale span{
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: green;
+}
+
+.offsale span{
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: red;
+}
+
+.canceled span{
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: black;
+}
+
+.postponed span{
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: orange;
+}
+
+.rescheduled span{
+    border-radius: 5px;
+    padding: 2px 5px;
+    background-color: orange;
+}
+
+.expand{
+    color: #ccc;
+    margin-top: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.leftArrow{
+    display: inline-block;
+    transform: rotate(135deg);
+    cursor: pointer;
+    color: #ccc;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.arrow:hover{
+    font-weight: bolder;
+    color: white;
+}
+
+.rightArrow{
+    display: inline-block;
+    transform: rotate(225deg);
+    cursor: pointer;
+    color: #ccc;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.venueDetail{
+    text-align: center;
+    background-color: aliceblue;
+    width: 64%;
+    border-radius: 15px;
+    padding: 7.5px 7.5px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.venue{
+    border-radius: 15px;
+    border: 1px solid black;
+    justify-content: center;
+}
+
+.venueName{
+    margin-top: 12.5px;
+}
+
+.venueName .vName{
+    font-size: 20px;
+    border-bottom: 1px solid black;
+}
+
+.row3{
+    display: flex;
+    justify-content: center;
+    margin: 0px 15px;
+    margin-bottom: 20px;
+}
+
+.row4{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+}
+
+.line{
+    width: 1px;
+    background-color: black;
+    margin: 0 10px;
+    display: block;
+}
+
+.addressDetail{
+    text-align: center;
+    flex: 1;
+}
+
+.moreDetails{
+    flex: 1;
+    text-align: center;
+}
+
+.address{
+    font-weight: bold;
+}
+  
+.addressValue{
+    margin-left: 5px;
+}
+  
+.mapLink{
+    margin-top: 10px;
+}
+
+.artists{
+    text-decoration: none;
+    color: #4392a5 !important;
+}
+
+.tmLink{
+    text-decoration: none;
+    color: #4392a5 !important;
+}
+
+.googleLink{
+    text-decoration: none;
+    color: #6cb4c1 !important;
+}
+
+.venueLink{
+    text-decoration: none;
+    color: #6cb4c1 !important;
+}
+
+.venueImage{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 0.5px solid black;
+}
+
+th {
+    cursor: pointer;
+}
+
+thead tr{
+    box-shadow: 0px 3px 5px 0px grey;
+}
